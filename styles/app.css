@@ -9,6 +9,7 @@
   padding: 4px 0;
   text-align: center;
 }header h1 {
+  padding: 8px 0;
   font-size: 24px;
   color: #333;
 }#app {
@@ -34,10 +35,10 @@
   fill: #fff;
 }textarea {
   margin: 0 auto;
-  border: 1px solid #2980a0;
+  border: 1px solid #666;
   width: 90%;
   padding: 6px 8px;
-  color: #000;
+  color: #333;
   background: #fff;
 }#rison-input {
   height: 100px;

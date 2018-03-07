@@ -8,7 +8,7 @@ var vm = new Vue({
   data: {
     rison_string: '',
     json_string: '',
-    kibana: false
+    kibana: true
   },
   methods: {
     rison_to_json: function () {
@@ -19,9 +19,12 @@ var vm = new Vue({
       }
 
       if (this.kibana) {
-        let url = new URL(rison_string);
-        let hash_url = new URL(url.hash.slice(1), `${url.protocol}//${url.host}`);
-        rison_string = hash_url.searchParams.get('_a');
+        try {
+          let url = new URL(rison_string);
+          let hash_url = new URL(url.hash.slice(1), `${url.protocol}//${url.host}`);
+          rison_string = hash_url.searchParams.get('_a');
+        } catch (error) {
+        }
       }
 
       this.json_string = JSON.stringify(rison.decode(rison_string), null, 4);

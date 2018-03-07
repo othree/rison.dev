@@ -31,10 +31,10 @@
 
 textarea {
   margin: 0 auto;
-  border: 1px solid #2980a0;
+  border: 1px solid #666;
   width: 90%;
   padding: 6px 8px;
-  color: #000;
+  color: #333;
   background: #fff;
 }
 
