@@ -16,11 +16,17 @@
 }
 
 #actions {
-  margin: 16px 0;
+  margin: 8px 0;
 }
 
-button {
+#actions svg[role=button] {
+  margin: 0 32px;
+  width: 32px;
+  height: 32px;
   font-size: 14px;
+}
+#actions svg[role=button] path {
+  fill: #fff;
 }
 
 textarea {

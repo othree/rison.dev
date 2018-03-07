@@ -24,9 +24,14 @@
   font-size: 14px;
   text-align: left;
 }#actions {
-  margin: 16px 0;
-}button {
+  margin: 8px 0;
+}#actions svg[role=button] {
+  margin: 0 32px;
+  width: 32px;
+  height: 32px;
   font-size: 14px;
+}#actions svg[role=button] path {
+  fill: #fff;
 }textarea {
   margin: 0 auto;
   border: 1px solid #2980a0;
