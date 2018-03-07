@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Rison Playground</h1>
+    </header>
+    <div id="app" role="application">
+      <div class="field">
+        <label for="rison-input">Rison data</label>
+        <textarea id="rison-input" v-model="rison_string">{{ rison_string }}</textarea>
+      </div>
+      <div id="actions">
+        <button id="rison-to-json" v-on:click="rison_to_json">Rison to JSON</button>
+        <button id="json-to-rison" v-on:click="json_to_rison">JSON to Rison</button>
+      </div>
+      <div class="field">
+        <label for="json-input">JSON data</label>
+        <textarea id="json-input" v-model="json_string">{{ json_string }}</textarea>
+      </div>
+    </div>
+    <main>
+      
+    </main>
+    <footer>
+      
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="/scripts/rison.js"></script>
+    <script src="/scripts/app.js"></script>
+  </body>
+</html>

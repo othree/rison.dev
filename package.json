@@ -1,0 +1,29 @@
+{
+  "name": "rison.io",
+  "version": "0.0.1",
+  "description": "Rison data format online playground",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/othree/rison.io.git"
+  },
+  "keywords": [
+    "rison",
+    "json",
+    "url"
+  ],
+  "author": "othree",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/othree/rison.io/issues"
+  },
+  "homepage": "https://github.com/othree/rison.io#readme",
+  "dependencies": {
+    "rison-esm": "^0.0.1",
+    "rison-node": "^1.0.0",
+    "rollup-plugin-node-resolve": "^3.0.3"
+  }
+}
