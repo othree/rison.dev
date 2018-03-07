@@ -22,8 +22,9 @@
   },
   "homepage": "https://github.com/othree/rison.io#readme",
   "dependencies": {
+    "postcss-easy-import": "^3.0.0",
+    "ress": "^1.2.2",
     "rison-esm": "^0.0.1",
-    "rison-node": "^1.0.0",
     "rollup-plugin-node-resolve": "^3.0.3"
   }
 }

@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title></title>
+    <title>Rison Playground</title>
+    <link rel="stylesheet" href="/styles/app.css" />
   </head>
   <body>
     <header>
@@ -12,6 +13,9 @@
       <div class="field">
         <label for="rison-input">Rison data</label>
         <textarea id="rison-input" v-model="rison_string">{{ rison_string }}</textarea>
+        <label>
+          <input type="checkbox" id="kibana-url" v-model="kibana" /> Kibana URL
+        </label>
       </div>
       <div id="actions">
         <button id="rison-to-json" v-on:click="rison_to_json">Rison to JSON</button>

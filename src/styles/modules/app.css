@@ -1,0 +1,41 @@
+
+#app {
+  padding: 32px 16px;
+  text-align: center;
+  color: #fff;
+  background: #2980b9;
+}
+
+.field label {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 4px;
+  width: 90%;
+  font-size: 14px;
+  text-align: left;
+}
+
+#actions {
+  margin: 16px 0;
+}
+
+button {
+  font-size: 14px;
+}
+
+textarea {
+  margin: 0 auto;
+  border: 1px solid #2980a0;
+  width: 90%;
+  padding: 6px 8px;
+  color: #000;
+  background: #fff;
+}
+
+#rison-input {
+  height: 100px;
+}
+
+#json-input {
+  height: 250px;
+}
