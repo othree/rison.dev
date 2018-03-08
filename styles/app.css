@@ -13,7 +13,7 @@
   font-size: 24px;
   color: #333;
 }#app {
-  padding: 32px 16px;
+  padding: 48px 16px;
   text-align: center;
   color: #fff;
   background: #2980b9;
@@ -22,6 +22,7 @@
   margin: 0 auto;
   padding-bottom: 4px;
   width: 90%;
+  max-width: 1000px;
   font-size: 14px;
   text-align: left;
 }#actions {
@@ -36,7 +37,9 @@
 }textarea {
   margin: 0 auto;
   border: 1px solid #666;
+  border-radius: 8px 0 0 8px;
   width: 90%;
+  max-width: 1000px;
   padding: 6px 8px;
   color: #333;
   background: #fff;
