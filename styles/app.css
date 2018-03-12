@@ -54,7 +54,7 @@
 }#json-input {
   height: 250px;
 }#dfns {
-  margin-top: 2em;
+  margin-top: 1em;
   display: flex;
   justify-content: center;
 }#json-dfn, #rison-dfn {
