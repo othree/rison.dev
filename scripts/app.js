@@ -6,7 +6,7 @@
 var vm = new Vue({
   el: '#app',
   data: {
-    rison_string: '',
+    rison_string: "(columns:!(_source),index:'main-*',interval:auto,query:(query_string:(analyze_wildcard:!t,query:'*')),sort:!('@timestamp',desc))",
     json_string: '',
     kibana: true
   },
@@ -19,12 +19,9 @@ var vm = new Vue({
       }
 
       if (this.kibana) {
-        try {
-          let url = new URL(rison_string);
-          let hash_url = new URL(url.hash.slice(1), `${url.protocol}//${url.host}`);
-          rison_string = hash_url.searchParams.get('_a');
-        } catch (error) {
-        }
+        let url = new URL(rison_string);
+        let hash_url = new URL(url.hash.slice(1), `${url.protocol}//${url.host}`);
+        rison_string = hash_url.searchParams.get('_a');
       }
 
       this.json_string = JSON.stringify(rison.decode(rison_string), null, 4);

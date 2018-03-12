@@ -3,9 +3,9 @@
 var vm = new Vue({
   el: '#app',
   data: {
-    rison_string: '',
+    rison_string: "(columns:!(_source),index:'main-*',interval:auto,query:(query_string:(analyze_wildcard:!t,query:'*')),sort:!('@timestamp',desc))",
     json_string: '',
-    kibana: false
+    kibana: true
   },
   methods: {
     rison_to_json: function () {
