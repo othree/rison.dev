@@ -36,15 +36,31 @@
   fill: #fff;
 }textarea {
   margin: 0 auto;
-  border: 1px solid #666;
-  border-radius: 8px 0 0 8px;
+  border-radius: 2px;
   width: 90%;
   max-width: 1000px;
   padding: 6px 8px;
   color: #333;
   background: #fff;
+}main {
+  margin: 2em auto;
+  max-width: 1000px;
+}h2, h3 {
+  margin: 2em auto 1em;
+}p {
+  margin: 1em auto;
 }#rison-input {
   height: 100px;
 }#json-input {
   height: 250px;
+}#dfns {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}#json-dfn, #rison-dfn {
+  margin: 1em;
+  border: 2px solid #666;
+  padding: 1em;
+}dd {
+  margin-left: 40px;
 }
