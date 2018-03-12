@@ -32,6 +32,16 @@ p {
   padding: 1em;
 }
 
+#dfns h4 {
+  position: sticky;
+  top: -1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid gray;
+  padding: 1px 0 4px;
+  width: 100%;
+  background: #fff;
+}
+
 dd {
   margin-left: 40px;
 }
