@@ -42,6 +42,13 @@
   padding: 6px 8px;
   color: #333;
   background: #fff;
+}.error {
+  margin: 0.5em auto;
+  border-radius: 3px;
+  padding: 4px;
+  max-width: 1000px;
+  color: #fff;
+  background: #dc3545;
 }main {
   margin: 2em auto;
   max-width: 1000px;

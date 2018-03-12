@@ -13,6 +13,7 @@
       <div class="field">
         <label for="rison-input">Rison data</label>
         <textarea id="rison-input" v-model="rison_string">{{ rison_string }}</textarea>
+        <div class="error" v-if="error">{{ error }}</div>
         <label>
           <input type="checkbox" id="kibana-url" v-model="kibana" /> Auto detect Kibana URL
         </label>

@@ -5,10 +5,13 @@ var vm = new Vue({
   data: {
     rison_string: "(columns:!(_source),index:'main-*',interval:auto,query:(query_string:(analyze_wildcard:!t,query:'*')),sort:!('@timestamp',desc))",
     json_string: '',
-    kibana: true
+    kibana: true,
+    format: 'Rison',
+    error: ''
   },
   methods: {
     rison_to_json: function () {
+      this.error = '';
       let rison_string = this.rison_string;
 
       if (!rison_string) {
@@ -16,12 +19,42 @@ var vm = new Vue({
       }
 
       if (this.kibana) {
-        let url = new URL(rison_string);
-        let hash_url = new URL(url.hash.slice(1), `${url.protocol}//${url.host}`);
-        rison_string = hash_url.searchParams.get('_a');
+        try {
+          let url = new URL(rison_string);
+          let hash_url = new URL(url.hash.slice(1), `${url.protocol}//${url.host}`);
+          rison_string = hash_url.searchParams.get('_a');
+        } catch (error) {}
       }
 
-      this.json_string = JSON.stringify(rison.decode(rison_string), null, 4);
+      let json_string = '';
+
+      // Rison
+      if (!json_string) {
+        try {
+          json_string = JSON.stringify(rison.decode(rison_string), null, 4);
+        } catch (error) {
+          this.error = error.message;
+        }
+      }
+
+      // O-Rison
+      if (!json_string) {
+        try {
+          json_string = JSON.stringify(rison.decode_object(rison_string), null, 4);
+          this.error = '';
+        } catch (error) {}
+      }
+
+      // A-Rison
+      if (!json_string) {
+        try {
+          json_string = JSON.stringify(rison.decode_array(rison_string), null, 4);
+          this.error = '';
+        } catch (error) {
+        }
+      }
+
+      this.json_string = json_string;
     },
     json_to_rison: function () {
       let json_string = this.json_string;
