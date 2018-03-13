@@ -38,6 +38,7 @@ var vm = new Vue({
           json_string = JSON.stringify(rison.decode(rison_string), null, 4);
           this.format = 'Rison';
           this.rison_error = '';
+          this.json_error = '';
         } catch (error) {
           this.rison_error = `Error: ${error.message}`;
         }
@@ -49,6 +50,7 @@ var vm = new Vue({
           json_string = JSON.stringify(rison.decode_object(rison_string), null, 4);
           this.format = 'O-Rison';
           this.rison_error = '';
+          this.json_error = '';
         } catch (error) {}
       }
 
@@ -58,6 +60,7 @@ var vm = new Vue({
           json_string = JSON.stringify(rison.decode_array(rison_string), null, 4);
           this.format = 'A-Rison';
           this.rison_error = '';
+          this.json_error = '';
         } catch (error) {}
       }
 
@@ -77,6 +80,7 @@ var vm = new Vue({
       try {
         rison_string = rison.encode(JSON.parse(this.json_string));
         this.json_error = '';
+        this.rison_error = '';
       } catch (error) {
         this.json_error = `Error: ${error.message}`;
       }
