@@ -35,20 +35,27 @@
 }#actions svg[role=button] path {
   fill: #fff;
 }textarea {
+  display: block;
   margin: 0 auto;
-  border-radius: 2px;
+  border-radius: 2px 2px 0 0;
   width: 90%;
   max-width: 1000px;
   padding: 6px 8px;
   color: #333;
   background: #fff;
-}.error {
-  margin: 0.5em auto;
-  border-radius: 3px;
-  padding: 4px;
+}#status {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  border-top: 1px solid #999;
+  border-radius: 0 0 2px 2px;
+  padding: 4px 8px;
   max-width: 1000px;
-  color: #fff;
-  background: #dc3545;
+  font-size: 12px;
+  color: #000;
+  background: #fff;
+}#status-error {
+  color: #dc3545;
 }main {
   margin: 2em auto;
   max-width: 1000px;
@@ -76,6 +83,10 @@
   padding: 1px 0 4px;
   width: 100%;
   background: #fff;
+}#dfns hr {
+  border-top: 1px solid #999;
+  border-bottom: 0;
+  height: 0;
 }dd {
   margin-left: 40px;
 }

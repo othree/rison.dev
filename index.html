@@ -13,7 +13,10 @@
       <div class="field">
         <label for="rison-input">Rison data</label>
         <textarea id="rison-input" v-model="rison_string">{{ rison_string }}</textarea>
-        <div class="error" v-if="error">{{ error }}</div>
+        <div id="status">
+          <span id="status-error">{{ error }}</span>
+          <span id="status-format">Format: {{ format }}</span>
+        </div>
         <label>
           <input type="checkbox" id="kibana-url" v-model="kibana" /> Auto detect Kibana URL
         </label>
@@ -29,7 +32,7 @@
     </div>
     <main>
       <h2>What is this?</h2>
-      <p>This is a simple tool translate Rison data format to JSON.</p>
+      <p>This is a simple tool translate Rison data format to/from JSON.</p>
       <h3>What is Rison</h3>
       <p>
       Rison is a data format focus on URL friendly and compact. The structure is like JSON, but use different character for notation. 
@@ -76,7 +79,7 @@
             <tt>false</tt><br>
             <tt>null</tt></dd>
           </dl>
-          <hr align="center" width="144">
+          <hr>
             <br>
             <br>
             <br>
@@ -90,7 +93,7 @@
             <br>
             <br>
             <br>
-          <hr align="center" width="144">
+          <hr>
           <dl>
             <dt><i>string</i></dt>
             <dd><tt>""</tt><br>
@@ -99,9 +102,9 @@
             <dd><i>char</i><br>
             <i>char chars</i></dd>
             <dt><i>char</i></dt>
-            <dd><small><i>any-Unicode-character-</i></small><br>
-            <small>&nbsp;&nbsp;&nbsp;&nbsp;<i>except-</i></small><b><tt>"</tt></b><small><i>-or-</i></small><b><tt>\</tt></b><small><i>-or-</i></small><br>
-            <small>&nbsp;&nbsp;&nbsp;&nbsp;<i>control-character</i></small><br>
+            <dd><i>any-Unicode-character-</i><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<i>except-</i><b><tt>"</tt></b><i>-or-</i><b><tt>\</tt></b><i>-or-</i><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<i>control-character</i><br>
             <tt>\"</tt><br>
             <tt>\\</tt><br>
             <tt>\/</tt><br>
@@ -111,7 +114,7 @@
             <tt>\r</tt><br>
             <tt>\t</tt><br>
             <tt>\u</tt> <i>four-hex-digits</i> </dd>
-          <hr width="144" align="center">
+          <hr>
             <dt><i>number</i></dt>
             <dd><i>int</i><br>
             <i>int frac</i><br>
@@ -171,7 +174,7 @@
             <tt><b>!f</b></tt><br>
             <tt><b>!n</b></tt></dd>
           </dl>
-          <hr width="144" align="center">
+          <hr>
           <dl>
             <dt><i>id</i></dt>
             <dd>
@@ -194,7 +197,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;<b><tt>-</tt></b>, <i>digit</i>
             </dd>
           </dl>
-          <hr width="144" align="center">
+          <hr>
           <dl>
             <dt><i>string</i></dt>
             <dd><tt><b>''</b></tt><br>
@@ -217,7 +220,7 @@
             <br>
             <br>
             <br>
-          <hr width="144" align="center">
+          <hr>
           <dl>
             <dt><i>number</i></dt>
             <dd><i>int</i><br>
