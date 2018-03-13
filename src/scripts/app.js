@@ -73,6 +73,7 @@ var vm = new Vue({
 
       try {
         rison_string = rison.encode(JSON.parse(this.json_string));
+        this.json_error = '';
       } catch (error) {
         this.json_error = `Error: ${error.message}`;
       }
