@@ -13,9 +13,9 @@
       <div class="field">
         <label for="rison-input">Rison data</label>
         <textarea id="rison-input" v-model="rison_string">{{ rison_string }}</textarea>
-        <div id="status">
-          <span id="status-error">{{ error }}</span>
-          <span id="status-format">Format: {{ format }}</span>
+        <div class="status">
+          <span class="status-error">{{ rison_error }}</span>
+          <span class="status-format">Format: {{ format }}</span>
         </div>
         <label>
           <input type="checkbox" id="kibana-url" v-model="kibana" /> Auto detect Kibana URL
@@ -28,6 +28,10 @@
       <div class="field">
         <label for="json-input">JSON data</label>
         <textarea id="json-input" v-model="json_string">{{ json_string }}</textarea>
+        <div class="status">
+          <span class="status-error">{{ json_error }}</span>
+          <span class="status-format">&nbsp;</span>
+        </div>
       </div>
     </div>
     <main>

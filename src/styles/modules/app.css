@@ -41,7 +41,7 @@ textarea {
   background: #fff;
 }
 
-#status {
+.status {
   display: flex;
   justify-content: space-between;
   margin: auto;
@@ -54,6 +54,6 @@ textarea {
   background: #fff;
 }
 
-#status-error {
+.status-error {
   color: #dc3545;
 }

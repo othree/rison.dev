@@ -7,11 +7,12 @@ var vm = new Vue({
     json_string: '',
     kibana: true,
     format: 'Rison',
-    error: ''
+    rison_error: '',
+    json_error: ''
   },
   methods: {
     rison_to_json: function () {
-      this.error = '';
+      this.rison_error = '';
       let rison_string = this.rison_string;
 
       if (!rison_string) {
@@ -33,9 +34,9 @@ var vm = new Vue({
         try {
           json_string = JSON.stringify(rison.decode(rison_string), null, 4);
           this.format = 'Rison';
-          this.error = '';
+          this.rison_error = '';
         } catch (error) {
-          this.error = `Error: ${error.message}`;
+          this.rison_error = `Error: ${error.message}`;
         }
       }
 
@@ -44,7 +45,7 @@ var vm = new Vue({
         try {
           json_string = JSON.stringify(rison.decode_object(rison_string), null, 4);
           this.format = 'O-Rison';
-          this.error = '';
+          this.rison_error = '';
         } catch (error) {}
       }
 
@@ -53,12 +54,13 @@ var vm = new Vue({
         try {
           json_string = JSON.stringify(rison.decode_array(rison_string), null, 4);
           this.format = 'A-Rison';
-          this.error = '';
-        } catch (error) {
-        }
+          this.rison_error = '';
+        } catch (error) {}
       }
 
-      this.json_string = json_string;
+      if (json_string) {
+        this.json_string = json_string;
+      }
     },
     json_to_rison: function () {
       let json_string = this.json_string;
@@ -67,7 +69,17 @@ var vm = new Vue({
         return;
       }
 
-      this.rison_string = rison.encode(JSON.parse(this.json_string));
+      let rison_string = ''
+
+      try {
+        rison_string = rison.encode(JSON.parse(this.json_string));
+      } catch (error) {
+        this.json_error = `Error: ${error.message}`;
+      }
+
+      if (rison_string) {
+        this.rison_string = rison_string;
+      }
     }
   }
 });
