@@ -48,6 +48,7 @@ textarea {
   border-top: 1px solid #999;
   border-radius: 0 0 2px 2px;
   padding: 4px 8px;
+  width: 90%;
   max-width: 1000px;
   font-size: 12px;
   color: #000;

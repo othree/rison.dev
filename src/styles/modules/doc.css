@@ -1,7 +1,8 @@
 
 main {
   margin: 2em auto;
-  max-width: 1000px;
+  max-width: 1032px;
+  padding: 0 16px 16px;
 }
 
 h2, h3 {
