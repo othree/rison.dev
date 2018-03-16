@@ -29,6 +29,19 @@
   max-width: 1000px;
   font-size: 14px;
   text-align: left;
+}.float-menu {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1000px;
+}.float-menu [role=button] {
+  float: right;
+  margin-bottom: -16px;
+  border-radius: 0 2px 0 2px;
+  padding: 2px 4px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #fff;
+  background: gray;
 }#actions {
   margin: 8px 0;
 }#actions svg[role=button] {

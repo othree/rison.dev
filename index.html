@@ -12,6 +12,9 @@
     <div id="app" role="application">
       <div class="field">
         <label for="rison-input">Rison data</label>
+        <div class="float-menu">
+          <span id="fill-sample" role="button" v-on:click="fill_sample">Fill sample data</span>
+        </div>
         <textarea id="rison-input" v-model="rison_string">{{ rison_string }}</textarea>
         <div class="status">
           <span class="status-error">{{ rison_error }}</span>

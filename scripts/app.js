@@ -6,7 +6,7 @@
 var vm = new Vue({
   el: '#app',
   data: {
-    rison_string: "(columns:!(_source),index:'main-*',interval:auto,query:(query_string:(analyze_wildcard:!t,query:'*')),sort:!('@timestamp',desc))",
+    rison_string: '',
     json_string: '',
     kibana: true,
     format: 'Rison',
@@ -14,6 +14,9 @@ var vm = new Vue({
     json_error: ''
   },
   methods: {
+    fill_sample: function () {
+      this.rison_string = "(columns:!(_source),index:'main-*',interval:auto,query:(query_string:(analyze_wildcard:!t,query:'*')),sort:!('@timestamp',desc))";
+    },
     rison_to_json: function () {
       this.rison_error = '';
       let rison_string = this.rison_string;
