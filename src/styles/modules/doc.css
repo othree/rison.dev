@@ -13,14 +13,6 @@ p {
   margin: 1em auto;
 }
 
-#rison-input {
-  height: 100px;
-}
-
-#json-input {
-  height: 250px;
-}
-
 #dfns {
   margin-top: 1em;
   display: flex;

@@ -41,6 +41,14 @@ textarea {
   background: #fff;
 }
 
+#rison-input {
+  height: 120px;
+}
+
+#json-input {
+  height: 250px;
+}
+
 .status {
   display: flex;
   justify-content: space-between;
