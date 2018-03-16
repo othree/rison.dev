@@ -17,6 +17,8 @@
 }
 
 .float-menu {
+  position: relative;
+  z-index: 1;
   margin: 0 auto;
   width: 90%;
   max-width: 1000px;

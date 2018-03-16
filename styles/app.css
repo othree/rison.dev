@@ -30,6 +30,8 @@
   font-size: 14px;
   text-align: left;
 }.float-menu {
+  position: relative;
+  z-index: 1;
   margin: 0 auto;
   width: 90%;
   max-width: 1000px;
