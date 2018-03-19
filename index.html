@@ -15,7 +15,7 @@
         <div class="float-menu">
           <span id="fill-sample" role="button" v-on:click="fill_sample">Sample Data</span>
         </div>
-        <textarea id="rison-input" v-model="rison_string">{{ rison_string }}</textarea>
+        <textarea id="rison-input" v-model="rison_string" v-bind:style="{ backgroundColor: rison_tbg_css }">{{ rison_string }}</textarea>
         <div class="status">
           <span class="status-error">{{ rison_error }}</span>
           <span class="status-format">Format: {{ format }}</span>
@@ -30,7 +30,7 @@
       </div>
       <div class="field">
         <label for="json-input">JSON data</label>
-        <textarea id="json-input" v-model="json_string">{{ json_string }}</textarea>
+        <textarea id="json-input" v-model="json_string" v-bind:style="{ backgroundColor: json_tbg_css }">{{ json_string }}</textarea>
         <div class="status">
           <span class="status-error">{{ json_error }}</span>
           <span class="status-format">&nbsp;</span>

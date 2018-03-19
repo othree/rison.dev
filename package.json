@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/othree/rison.io#readme",
   "dependencies": {
+    "es6-tween": "^5.1.0",
     "postcss-easy-import": "^3.0.0",
     "ress": "^1.2.2",
     "rison-esm": "^0.0.1",

@@ -55,6 +55,10 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
 
+es6-tween@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/es6-tween/-/es6-tween-5.1.0.tgz#0a694a4047bfcce32b7df4f2610f8d8e8b804fba"
+
 escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
