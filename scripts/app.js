@@ -1,9 +1,10 @@
 (function () {
 'use strict';
 
-/* global: rison */
+/* eslint-env es6, browser */
+/* global rison, Vue */
 
-var vm = new Vue({
+const vm = new Vue({ // eslint-disable-line no-unused-vars
   el: '#app',
   data: {
     rison_string: '',
@@ -19,26 +20,26 @@ var vm = new Vue({
     },
     rison_to_json: function () {
       this.rison_error = '';
-      let rison_string = this.rison_string;
+      let risonString = this.rison_string;
 
-      if (!rison_string) {
+      if (!risonString) {
         return;
       }
 
       if (this.kibana) {
         try {
-          let url = new URL(rison_string);
-          let hash_url = new URL(url.hash.slice(1), `${url.protocol}//${url.host}`);
-          rison_string = hash_url.searchParams.get('_a');
+          let url = new URL(risonString);
+          let hashUrl = new URL(url.hash.slice(1), `${url.protocol}//${url.host}`);
+          risonString = hashUrl.searchParams.get('_a');
         } catch (error) {}
       }
 
-      let json_string = '';
+      let jsonString = '';
 
       // Rison
-      if (!json_string) {
+      if (!jsonString) {
         try {
-          json_string = JSON.stringify(rison.decode(rison_string), null, 4);
+          jsonString = JSON.stringify(rison.decode(risonString), null, 4);
           this.format = 'Rison';
           this.rison_error = '';
           this.json_error = '';
@@ -48,9 +49,9 @@ var vm = new Vue({
       }
 
       // O-Rison
-      if (!json_string) {
+      if (!jsonString) {
         try {
-          json_string = JSON.stringify(rison.decode_object(rison_string), null, 4);
+          jsonString = JSON.stringify(rison.decode_object(risonString), null, 4);
           this.format = 'O-Rison';
           this.rison_error = '';
           this.json_error = '';
@@ -58,38 +59,38 @@ var vm = new Vue({
       }
 
       // A-Rison
-      if (!json_string) {
+      if (!jsonString) {
         try {
-          json_string = JSON.stringify(rison.decode_array(rison_string), null, 4);
+          jsonString = JSON.stringify(rison.decode_array(risonString), null, 4);
           this.format = 'A-Rison';
           this.rison_error = '';
           this.json_error = '';
         } catch (error) {}
       }
 
-      if (json_string) {
-        this.json_string = json_string;
+      if (jsonString) {
+        this.json_string = jsonString;
       }
     },
     json_to_rison: function () {
-      let json_string = this.json_string;
+      let jsonString = this.json_string;
 
-      if (!json_string) {
+      if (!jsonString) {
         return;
       }
 
-      let rison_string = '';
+      let risonString = '';
 
       try {
-        rison_string = rison.encode(JSON.parse(this.json_string));
+        risonString = rison.encode(JSON.parse(this.json_string));
         this.json_error = '';
         this.rison_error = '';
       } catch (error) {
         this.json_error = `Error: ${error.message}`;
       }
 
-      if (rison_string) {
-        this.rison_string = rison_string;
+      if (risonString) {
+        this.rison_string = risonString;
       }
     }
   }
