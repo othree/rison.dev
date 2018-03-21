@@ -10,13 +10,13 @@ function clone (o) {
 const YELLOW = {
   r: 255,
   g: 255,
-  b: 64
+  b: 64,
 };
 
 const WHITE = {
   r: 255,
   g: 255,
-  b: 255
+  b: 255,
 };
 
 const vm = new Vue({ // eslint-disable-line no-unused-vars
@@ -33,7 +33,7 @@ const vm = new Vue({ // eslint-disable-line no-unused-vars
     rison_tbg: clone(WHITE),
     json_tbg: clone(WHITE),
     rison_bg_tween: null,
-    json_bg_tween: null
+    json_bg_tween: null,
   },
   watch: {
     rison_bg: function () {
@@ -53,7 +53,7 @@ const vm = new Vue({ // eslint-disable-line no-unused-vars
       this.json_bg_tween = new Tween(this.json_tbg)
         .to(this.json_bg, 750)
         .start();
-    }
+    },
   },
   computed: {
     rison_tbg_css: function () {
@@ -61,7 +61,7 @@ const vm = new Vue({ // eslint-disable-line no-unused-vars
     },
     json_tbg_css: function () {
       return `rgb(${this.json_tbg.r}, ${this.json_tbg.g}, ${this.json_tbg.b})`;
-    }
+    },
   },
   methods: {
     fill_sample: function () {
@@ -145,8 +145,8 @@ const vm = new Vue({ // eslint-disable-line no-unused-vars
         this.rison_tbg = clone(YELLOW);
         this.rison_bg = clone(WHITE);
       }
-    }
-  }
+    },
+  },
 });
 
 // Setup the animation loop.

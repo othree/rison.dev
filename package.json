@@ -27,5 +27,8 @@
     "ress": "^1.2.2",
     "rison-esm": "^0.0.1",
     "rollup-plugin-node-resolve": "^3.0.3"
+  },
+  "eslintConfig": {
+    "extends": "othree-style"
   }
 }
